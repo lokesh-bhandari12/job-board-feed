@@ -110,7 +110,9 @@ export default function App() {
 
       <div className="job-list">
         {currentJobs.length === 0 ? (
-          <p className="no-jobs">Koi jobs nahi mili.</p>
+          <p className="no-jobs">
+            {activeTab === 'bookmarks' ? 'No bookmarked jobs found.' : 'No jobs found matching your criteria.'}
+          </p>
         ) : (
           currentJobs.map((job) => {
             const isBookmarked = bookmarks.includes(job.id);
